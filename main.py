@@ -7,7 +7,6 @@ import json
 import base64
 import datetime
 from dotenv import load_dotenv
-import pytz
 
 scopes = [
     "https://www.googleapis.com/auth/spreadsheets"
@@ -73,11 +72,10 @@ if __name__ == '__main__':
     elif bank == 'C':
         print(get_rates('cimb'))
     '''
-    tz = pytz.timezone('Asia/Jakarta')
     b = list(get_rates('bca'))
-    b.insert(0, tz.localize(datetime.datetime.now()).isoformat())
+    b.insert(0, datetime.datetime.now().isoformat())
     c = list(get_rates('cimb'))
-    c.insert(0, tz.localize(datetime.datetime.now()).isoformat())
+    c.insert(0, datetime.datetime.now().isoformat())
     worksheet.insert_row(b, index = (len(worksheet.get()) + 1))
     worksheet.insert_row(c, index = (len(worksheet.get()) + 1))
     print("Appended.")
