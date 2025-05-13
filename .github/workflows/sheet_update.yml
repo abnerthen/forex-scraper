@@ -31,3 +31,4 @@ jobs:
           python main.py
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          SHEET_ID: ${{ secrets.SHEET_ID }}

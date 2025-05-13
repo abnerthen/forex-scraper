@@ -22,7 +22,7 @@ creds = Credentials.from_service_account_info(credential_file, scopes=scopes)
 
 client = gspread.authorize(creds)
 
-sheet_id = "1JPoSfhVYdmt6MXzk1b7W8lsge5UOZNKLq0B6JjyTCi0"
+sheet_id = os.environ['SHEET_ID']
 
 sheet = client.open_by_key(sheet_id)
 
