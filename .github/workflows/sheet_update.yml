@@ -3,7 +3,7 @@ name: Update GSheet
 on: 
   push:
   schedule:
-    - cron: '0 2,3,9,10 * * *'
+    - cron: '0 1-4,8-11 * * *'
   workflow_dispatch:
 
 jobs:
